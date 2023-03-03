@@ -19,6 +19,7 @@ public class Contract {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Date date;
+    private String numberForContract;
     @OneToOne
     @JoinColumn(name = "client_id")
     private Client client;

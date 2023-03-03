@@ -8,7 +8,7 @@ spring:
     show-sql: true
     generate-ddl: true
     hibernate:
-      ddl-auto: none
+      ddl-auto: create-drop
       dialect: org.hibernate.dialect.PostgresQLDialect
 server:
   port: 9096

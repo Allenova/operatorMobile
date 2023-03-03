@@ -14,7 +14,7 @@ public class ClientDto implements Serializable {
     private Long id;
     private String name;
     private String surName;
-    private String address;
+    private AddressDto address;
     private PassportDto passport;
 }
 

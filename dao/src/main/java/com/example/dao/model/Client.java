@@ -21,7 +21,10 @@ public class Client {
     private Long id;
     private String name;
     private String surName;
-    private String address;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn
+    private Address address;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn
     private Passport passport;

@@ -56,7 +56,7 @@ public class TariffPlanService implements AbstractTariffPlanService {
 
     @Override
     public List<TariffPlanDto> findByIsArchive(Boolean isArchive) {
-        List<TariffPlanDto> tariffPlanDtoList = getAll();
+        List<TariffPlanDto> tariffPlanDtoList =abstractTariffPlanRepository.findAll().stream().map(tariffPlanMapper::tariffPlanToTariffPlanDto).collect(Collectors.toList()); ;
         List<TariffPlanDto> result = tariffPlanDtoList.stream().filter(tariffPlanDto -> {
             if (tariffPlanDto.getIsArchive() == isArchive) {
                 return true;
@@ -68,7 +68,7 @@ public class TariffPlanService implements AbstractTariffPlanService {
 
     @Override
     public TariffPlanDto updateTariffPlan(Long id, TariffPlanDto tariffPlanDto) {
-        abstractTariffPlanRepository.updateFreeMinuteAndPriceAndIsArchiveById(tariffPlanDto.getFreeMinute(),tariffPlanDto.getPrice(),tariffPlanDto.getIsArchive(),id);
+        abstractTariffPlanRepository.updateFreeMinuteAndPriceAndIsArchiveById(tariffPlanDto.getFreeMinute(), tariffPlanDto.getPrice(), tariffPlanDto.getIsArchive(), id);
         return tariffPlanMapper.tariffPlanToTariffPlanDto(abstractTariffPlanRepository.getReferenceById(id));
     }
 

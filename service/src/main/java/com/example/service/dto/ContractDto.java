@@ -13,6 +13,7 @@ import java.util.Date;
 public class ContractDto implements Serializable {
     private Long id;
     private Date date;
+    private String numberForContract;
     private ClientDto client;
     private PhoneNumberDto phoneNumber;
     private TariffPlanDto tariffPlan;

@@ -1,4 +1,8 @@
 spring:
+  liquibase:
+    enabled: true
+    default-schema: public
+    change-log: db/changelog/db.changelog-master.xml
   datasource:
     url: jdbc:postgresql://localhost:5433/operatorMobile
     username: postgres
@@ -8,7 +12,7 @@ spring:
     show-sql: true
     generate-ddl: true
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: none
       dialect: org.hibernate.dialect.PostgresQLDialect
 server:
   port: 9096

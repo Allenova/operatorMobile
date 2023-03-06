@@ -23,6 +23,7 @@
     <properties>
         <java.version>11</java.version>
         <open_api.version>1.6.4</open_api.version>
+        <liquibase.version>4.19.1</liquibase.version>
     </properties>
     <dependencies>
         <dependency>
@@ -69,11 +70,21 @@
             <artifactId>springfox-swagger2</artifactId>
             <version>3.0.0</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.liquibase</groupId>-->
-<!--            <artifactId>liquibase-core</artifactId>-->
-<!--            <version>3.6.2</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>1.33</version>
+        </dependency>
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+            <version>${liquibase.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-maven-plugin</artifactId>
+            <version>${liquibase.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok-mapstruct-binding</artifactId>
@@ -128,7 +139,6 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
 
 
 </project>
